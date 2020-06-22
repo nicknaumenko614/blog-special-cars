@@ -22,6 +22,18 @@
             </ul>
         </nav>
     </header>
+
+    <main>
+        <section>
+            <h2>Posts</h2>
+            <ul class="posts__list">
+                <li th:each="post: ${posts}" class="posts__list-item">
+                    <a th:text="${post.title}" th:href="@{'/post/'+${post.title}}"
+                       class="posts__link">Post</a>
+                </li>
+            </ul>
+        </section>
+    </main>
 </div>
 </body>
 
