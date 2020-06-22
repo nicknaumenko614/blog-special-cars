@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -13,6 +15,17 @@
 <div class="container">
     <header class="header">
         <h1 class="header__title">All Posts</h1>
+
+        <section>
+            <h2>Posts</h2>
+            <ul class="posts__list">
+                <li th:each="post: ${posts}" class="posts__list-item">
+                    <a th:text="${post.title}" th:href="@{'/post/'+${post.title}}"
+                       class="posts__link">Post</a>
+                </li>
+            </ul>
+        </section>
+
         <nav class="header__nav">
             <ul class="header__nav-list">
                 <li class="header__nav-list-item">
@@ -23,17 +36,7 @@
         </nav>
     </header>
 
-    <main>
-        <section>
-            <h2>Posts</h2>
-            <ul class="posts__list">
-                <li th:each="post: ${posts}" class="posts__list-item">
-                    <a th:text="${post.title}" th:href="@{'/post/'+${post.title}}"
-                       class="posts__link">Post</a>
-                </li>
-            </ul>
-        </section>
-    </main>
+
 </div>
 </body>
 

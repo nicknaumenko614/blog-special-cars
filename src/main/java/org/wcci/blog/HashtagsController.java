@@ -13,7 +13,7 @@ public class HashtagsController {
 
     @RequestMapping({"hashtag/{hashtagName}"})
     public String showOnePost(Model model) {
-        return "single-post-template";
+        return "single-hashtag-template";
 
     }
 }

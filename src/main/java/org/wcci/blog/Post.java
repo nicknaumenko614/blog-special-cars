@@ -10,9 +10,11 @@ public class Post {
     private Author author;
     private LocalDateTime publishDate;
     private Genre genre;
-    private List<Tag> hashtags;
+    private Tag hashtags;
 
-    public Post(String title, String body, Author author, LocalDateTime publishDate, Genre genre, List<Tag> hashtags) {
+protected Post(){}
+
+    public Post(String title, String body, Author author, LocalDateTime publishDate, Genre genre, Tag hashtags) {
         this.title = title;
         this.body = body;
         this.author = author;
@@ -41,7 +43,7 @@ public class Post {
         return genre;
     }
 
-    public List<Tag> getHashtags() {
+    public Tag getHashtags() {
         return hashtags;
     }
 }
