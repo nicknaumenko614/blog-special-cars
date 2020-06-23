@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Single Genre</title>
+    <title>Genre</title>
     <link rel="stylesheet" href="/static/css/layout.css">
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
@@ -12,7 +12,19 @@
 <body>
 <div class="container">
     <header class="header">
-        <h1 class="header__title">Single Genre</h1>
+        <h1 class="header__title">Genre</h1>
+
+        <section>
+            <h2 th:text="${genre.genreName}" class="genre__name">genre name placeholder</h2>
+
+            <ul class="genres-of-posts__list">
+                <li th:each="post: ${genre.posts}" class="genre__item">
+                    <a th:text="${post.title}"
+                       th:href="@{'/genre/'+${post.title}}" class="genre-of-post__link"> tagged post placeholder</a>
+                </li>
+            </ul>
+        </section>
+
         <nav class="header__nav">
             <ul class="header__nav-list">
                 <li class="header__nav-list-item">
@@ -24,4 +36,4 @@
 </div>
 </body>
 
-</html>>
+</html>

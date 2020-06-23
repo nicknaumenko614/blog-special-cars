@@ -13,11 +13,22 @@
 <div class="container">
     <header class="header">
         <h1 class="header__title">All Authors</h1>
+
+        <section>
+            <h2>Genres</h2>
+            <ul class="genres__list">
+                <li th:each="author: ${authors}" class="genres__list-item">
+                    <a th:text="${author.authorName}" th:href="@{'/author/'+${author.authorName}}"
+                       class="author__link">link to a requested author</a>
+                </li>
+            </ul>
+        </section>
+
         <nav class="header__nav">
             <ul class="header__nav-list">
                 <li class="header__nav-list-item">
                     <a href="/" class="header__nav-link">Home</a>
-                    <a href="/author/single-author-name" class="header__nav-link">Single Author</a>
+
                 </li>
             </ul>
         </nav>

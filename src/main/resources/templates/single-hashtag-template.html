@@ -13,6 +13,18 @@
 <div class="container">
     <header class="header">
         <h1 class="header__title">Single Hashtag</h1>
+
+        <section>
+            <h2 th:text="${hashtag.tagName}" class="hashtag__name">hashtag name placeholder</h2>
+
+            <ul class="tagged__posts__list">
+                <li th:each="post: ${hashtag.posts}" class="hashtags__item">
+                    <a th:text="${post.title}"
+                       th:href="@{'/hashtag/'+${post.title}}" class="hashtag__link"> tagged post placeholder</a>
+                </li>
+            </ul>
+        </section>
+
         <nav class="header__nav">
             <ul class="header__nav-list">
                 <li class="header__nav-list-item">
@@ -24,4 +36,4 @@
 </div>
 </body>
 
-</html>>
+</html>

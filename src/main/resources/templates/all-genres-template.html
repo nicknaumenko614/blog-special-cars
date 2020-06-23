@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>All Genres</title>
     <link rel="stylesheet" href="/static/css/layout.css">
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
@@ -13,11 +13,21 @@
 <div class="container">
     <header class="header">
         <h1 class="header__title">All Genres</h1>
+
+        <section>
+            <h2>Genres</h2>
+            <ul class="genres__list">
+                <li th:each="genre: ${genres}" class="genres__list-item">
+                    <a th:text="${genre.genreName}" th:href="@{'/genre/'+${genre.genreName}}"
+                       class="genre__link">link to a requested genre</a>
+                </li>
+            </ul>
+        </section>
+
         <nav class="header__nav">
             <ul class="header__nav-list">
                 <li class="header__nav-list-item">
                     <a href="/" class="header__nav-link">Home</a>
-                    <a href="/genre/single-genre" class="header__nav-link">Single Genre</a>
                 </li>
             </ul>
         </nav>

@@ -15,9 +15,9 @@ public class PostsService {
     }
 
     private void addInitialPosts() {
-        Tag tag1 = new Tag("First Hashtag", new ArrayList<>());
-        Tag tag2 = new Tag("Second Hashtag", new ArrayList<>());
-        List<Tag> hashtags = new ArrayList<>();
+        Hashtag tag1 = new Hashtag("First Hashtag", new ArrayList<>());
+        Hashtag tag2 = new Hashtag("Second Hashtag", new ArrayList<>());
+        List<Hashtag> hashtags = new ArrayList<>();
 
         hashtags.add(tag1);
         hashtags.add(tag2);
