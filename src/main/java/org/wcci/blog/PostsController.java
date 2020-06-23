@@ -2,6 +2,7 @@ package org.wcci.blog;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -19,7 +20,8 @@ public class PostsController {
     }
 
     @RequestMapping("post/{postTitle}")
-    public String showOnePost(Model model) {
+    public String showOnePost(@PathVariable String postTitle, Model model) {
+        model.addAttribute("post", postsService.getSinglePost(postTitle));
         return "single-post-template";
 
     }
