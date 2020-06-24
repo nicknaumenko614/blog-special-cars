@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HashtagsController {
-   private HashtagService hashtagService;
+   private HashtagsService hashtagService;
 
-    public HashtagsController(HashtagService hashtagService) {
+    public HashtagsController(HashtagsService hashtagService) {
         this.hashtagService = hashtagService;
     }
 

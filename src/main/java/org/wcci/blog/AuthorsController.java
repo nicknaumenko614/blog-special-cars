@@ -7,20 +7,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class AuthorsController {
-    private AuthorService authorService;
+    private AuthorsService authorsService;
 
-    public AuthorsController(AuthorService authorService) {
-        this.authorService = authorService;
+    public AuthorsController(AuthorsService authorsService) {
+        this.authorsService = authorsService;
     }
 
     @RequestMapping("all-authors")
     public String showAllAuthors(Model model) {
-        model.addAttribute("authors", authorService.getAllAuthors());
+        model.addAttribute("authors", authorsService.getAllAuthors());
         return "all-authors-template";
     }
     @RequestMapping("author/{authorName}")
     public String showOneAuthor(@PathVariable String authorName, Model model) {
-        model.addAttribute( "author", authorService.getSingleAuthor(authorName));
+        model.addAttribute( "author", authorsService.getSingleAuthor(authorName));
         return "single-author-template";
 
     }

@@ -7,21 +7,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class GenresController {
-    private GenreService genreService;
+    private GenresService genresService;
 
-    public GenresController(GenreService genreService) {
-        this.genreService = genreService;
+    public GenresController(GenresService genresService) {
+        this.genresService = genresService;
     }
 
     @RequestMapping("all-genres")
     public String showAllGenres(Model model) {
-        model.addAttribute("genres", genreService.getAllGenres());
+        model.addAttribute("genres", genresService.getAllGenres());
         return "all-genres-template";
     }
 
     @RequestMapping("genre/{genreName}")
     public String showOneGenre(@PathVariable String genreName, Model model) {
-        model.addAttribute("genre", genreService.getSingleGenre(genreName));
+        model.addAttribute("genre", genresService.getSingleGenre(genreName));
         return "single-genre-template";
 
     }
