@@ -18,7 +18,7 @@
             <h2>Genres</h2>
             <ul class="genres__list">
                 <li th:each="genre: ${genres}" class="genres__list-item">
-                    <a th:text="${genre.genreName}" th:href="@{'/genre/'+${genre.genreName}}"
+                    <a th:text="${genre.genreName}" th:href="@{'/genre/'+${genre.id}}"
                        class="genre__link">link to a requested genre</a>
                 </li>
             </ul>

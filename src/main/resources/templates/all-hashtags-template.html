@@ -18,7 +18,7 @@
             <h2>Hashtags</h2>
             <ul class="hashtags__list">
                 <li th:each="hashtag: ${hashtags}" class="hashtags__list-item">
-                    <a th:text="${hashtag.tagName}" th:href="@{'/hashtag/'+${hashtag.tagName}}"
+                    <a th:text="${hashtag.tagName}" th:href="@{'/hashtag/'+${hashtag.id}}"
                        class="hashtag__link">link to all posts with a requested tag name</a>
                 </li>
             </ul>

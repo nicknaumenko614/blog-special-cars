@@ -1,9 +1,11 @@
-package org.wcci.blog;
+package org.wcci.blog.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.wcci.blog.service.GenresService;
 
 @Controller
 public class GenresController {
@@ -13,15 +15,15 @@ public class GenresController {
         this.genresService = genresService;
     }
 
-    @RequestMapping("all-genres")
+    @GetMapping("all-genres")
     public String showAllGenres(Model model) {
         model.addAttribute("genres", genresService.getAllGenres());
         return "all-genres-template";
     }
 
-    @RequestMapping("genre/{genreName}")
-    public String showOneGenre(@PathVariable String genreName, Model model) {
-        model.addAttribute("genre", genresService.getSingleGenre(genreName));
+    @GetMapping("genre/{id}")
+    public String showOneGenre(@PathVariable Long id, Model model) {
+        model.addAttribute("genre", genresService.getSingleGenre(id));
         return "single-genre-template";
 
     }

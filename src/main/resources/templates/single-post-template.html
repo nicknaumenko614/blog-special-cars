@@ -24,7 +24,7 @@
             <ul class="hashtags__list">
                 <li th:each="hashtag: ${post.hashtags}" class="hashtags__item">
                     <a th:text="${hashtag.tagName}"
-                       th:href="@{'/hashtag/'+${hashtag.tagName}}" class="hashtag__link"> hashtag placeholder</a>
+                       th:href="@{'/hashtag/'+${hashtag.id}}" class="hashtag__link"> hashtag placeholder</a>
                 </li>
             </ul>
         </section>

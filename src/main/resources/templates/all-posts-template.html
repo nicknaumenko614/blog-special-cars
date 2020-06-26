@@ -20,7 +20,7 @@
             <h2>Posts</h2>
             <ul class="posts__list">
                 <li th:each="post: ${posts}" class="posts__list-item">
-                    <a th:text="${post.title}" th:href="@{'/post/'+${post.title}}"
+                    <a th:text="${post.title}" th:href="@{'/post/'+${post.id}}"
                        class="posts__link">link to a requested post</a>
                 </li>
             </ul>

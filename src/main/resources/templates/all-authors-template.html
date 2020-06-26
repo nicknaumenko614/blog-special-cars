@@ -18,7 +18,7 @@
             <h2>Authors</h2>
             <ul class="author__list">
                 <li th:each="author: ${authors}" class="author__list-item">
-                    <a th:text="${author.authorName}" th:href="@{'/author/'+${author.authorName}}"
+                    <a th:text="${author.authorName}" th:href="@{'/author/'+${author.id}}"
                        class="author__link">link to a requested author</a>
                 </li>
             </ul>

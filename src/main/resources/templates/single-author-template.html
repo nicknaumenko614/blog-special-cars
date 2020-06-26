@@ -20,7 +20,7 @@
             <ul class="author-of-posts__list">
                 <li th:each="post: ${author.authorsPosts}" class="genre__item">
                     <a th:text="${post.title}"
-                       th:href="@{'/post/'+${post.title}}" class="author-of-post__link"> authors posts placeholder</a>
+                       th:href="@{'/post/'+${post.id}}" class="author-of-post__link"> authors posts placeholder</a>
                 </li>
             </ul>
         </section>
