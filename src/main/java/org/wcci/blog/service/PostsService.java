@@ -24,6 +24,10 @@ public class PostsService {
         return postRepo.findAll();
     }
 
+    public Post getPostByTitle(String postTitle) {
+        return postRepo.findPostByTitle(postTitle);
+    }
+
     public Post getSinglePost(Long id) {
         Optional<Post> postOptional = postRepo.findById(id);
         Post foundPost;
@@ -35,9 +39,9 @@ public class PostsService {
         return foundPost;
     }
 
-//    public void save(Post postToSave) {
-//        postRepo.save(postToSave);
-//        }
+    public void saveNewPost(Post postToSave) {
+        postRepo.save(postToSave);
+        }
 }
 
 

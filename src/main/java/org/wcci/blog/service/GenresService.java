@@ -25,6 +25,10 @@ public class GenresService {
         return genreRepo.findAll();
     }
 
+    public Genre getGenreByName(String genreName){
+        return genreRepo.findGenreByGenreName(genreName);
+    }
+
     public Genre getSingleGenre (Long id){
         Optional<Genre> genreOptional = genreRepo.findById(id);
         Genre foundGenre;
@@ -36,8 +40,8 @@ public class GenresService {
         return foundGenre;
     }
 
-//    public void save(Genre genreToSave) {
-//        genreRepo.save(genreToSave);
-//    }
+    public void saveNewGenre(Genre genreToSave) {
+        genreRepo.save(genreToSave);
+    }
 
 }

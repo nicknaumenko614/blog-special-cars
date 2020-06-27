@@ -48,18 +48,25 @@ public class Populator implements CommandLineRunner {
         hashtagRepo.save(hashtag2);
         hashtagRepo.save(hashtag3);
 
+        List<Hashtag> hashtagList1 = new ArrayList<>();
+        hashtagList1.add(hashtag1);
+        hashtagList1.add(hashtag3);
         Post post1 = new Post("First Post Title goes here",
                 "This is the body of first post",
                 author1,
                 LocalDateTime.now(),
                 genre1,
-                hashtag1, hashtag3);
+                hashtagList1);
+
+        List<Hashtag> hashtagList2 = new ArrayList<>();
+        hashtagList2.add(hashtag2);
+        hashtagList2.add(hashtag3);
         Post post2 = new Post("Second Post Title goes here",
                 "This is the body of second post",
                 author2,
                 LocalDateTime.now(),
                 genre2,
-                hashtag2, hashtag3);
+                hashtagList2);
         List<Post> posts = new ArrayList<>();
         postRepo.save(post1);
         postRepo.save(post2);

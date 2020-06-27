@@ -27,6 +27,14 @@ public class HashtagsService {
         return hashtagRepo.findAll();
     }
 
+    public Hashtag getHashtagByName(String hashtagName) {
+        return hashtagRepo.findHashtagByTagName(hashtagName);
+    }
+
+    public void saveNewHashtag(Hashtag hashtagToSave) {
+        hashtagRepo.save(hashtagToSave);
+    }
+
     public Hashtag getSingleHashtag(Long id) {
         Optional<Hashtag> hashtagOptional = hashtagRepo.findById(id);
         Hashtag foundHashtag;

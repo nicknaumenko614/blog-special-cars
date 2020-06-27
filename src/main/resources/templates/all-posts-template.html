@@ -26,6 +26,44 @@
             </ul>
         </section>
 
+        <section>
+            <h2>Add Post</h2>
+
+            <form action="posts/add" method="POST" class="new-post-form">
+
+                <li><label for="new-post__post-genre-input" class="form__label">Genre</label>
+                    <select name="genreId" id="new-post__post-genre-input">
+                        <option th:each="genre:${genres}" th:value="${genre.id}" th:text="${genre.genreName} "></option>
+                    </select>
+                </li>
+
+                <li><label for="new-post__post-author-input" class="form__label">Author</label>
+                    <select name="authorId" id="new-post__post-author-input">
+                        <option th:each="author:${authors}" th:value="${author.id}"
+                                th:text="${author.authorName} "></option>
+                    </select>
+                </li>
+
+                <li><label for="new-post__post-title-input" class="form__label">Title</label>
+                    <input type="text" name="title" id="new-post__post-title-input">
+                </li>
+
+                <li><label for="new-post__post-body-input" class="form__label">Text of your post</label>
+                    <input type="text" name="body" id="new-post__post-body-input">
+                </li>
+
+                <li><label for="new-post__post-hashtag-input" class="form__label">Hashtag</label>
+                    <select name="hashtagIds" multiple id="new-post__post-hashtag-input">
+                        <option th:each="hashtag: ${hashtags}" th:value="${hashtag.id}"
+                                th:text="${hashtag.tagName}"></option>
+                    </select>
+                </li>
+
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
         <nav class="header__nav">
             <ul class="header__nav-list">
                 <li class="header__nav-list-item">

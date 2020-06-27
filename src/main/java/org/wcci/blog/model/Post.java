@@ -29,13 +29,13 @@ public class Post {
     protected Post() {
     }
 
-    public Post(String title, String body, Author author, LocalDateTime publishDate, Genre genre, Hashtag... hashtags) {
+    public Post(String title, String body, Author author, LocalDateTime publishDate, Genre genre, List<Hashtag> hashtags) {
         this.title = title;
         this.body = body;
         this.author = author;
         this.publishDate = publishDate;
         this.genre = genre;
-        this.hashtags = new ArrayList<>(Arrays.asList(hashtags));
+        this.hashtags =hashtags;
     }
 
     public long getId() {

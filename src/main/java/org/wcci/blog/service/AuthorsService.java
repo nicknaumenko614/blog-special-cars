@@ -24,6 +24,10 @@ public class AuthorsService {
         this.authorRepo = authorRepo;
     }
 
+    public Author getAuthorByName(String authorName) {
+        return authorRepo.findAuthorByAuthorName(authorName);
+    }
+
 
     public Iterable<Author> getAllAuthors() {
         return authorRepo.findAll();
@@ -39,7 +43,8 @@ public class AuthorsService {
         }
         return foundAuthor;
     }
-//    public void save(Author authorToSave) {
-//        authorRepo.save(authorToSave);
-//    }
+
+    public void saveNewAuthor(Author authorToSave) {
+        authorRepo.save(authorToSave);
+    }
 }
