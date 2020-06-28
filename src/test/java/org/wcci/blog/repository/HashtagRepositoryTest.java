@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.wcci.blog.model.Genre;
 import org.wcci.blog.model.Hashtag;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -30,9 +29,6 @@ public class HashtagRepositoryTest {
 
         entityManager.flush();
         entityManager.clear();
-
-//        Hashtag retrievedHashtag = hashtagRepository.findHashtagByTagName(testHashtag2.getTagName());
-//        assertThat(retrievedHashtag.getTagName()).isEqualTo(testHashtag2);
 
         Hashtag retrievedHashtag = hashtagRepository.findHashtagByTagName("TestHashtag3");
         assertThat(retrievedHashtag.getTagName()).isEqualTo("TestHashtag3");

@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.wcci.blog.model.Author;
 import org.wcci.blog.repository.AuthorRepository;
 
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 

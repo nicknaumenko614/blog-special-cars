@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 public class Genre {
@@ -39,27 +38,5 @@ public class Genre {
 
 
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Genre genre = (Genre) o;
-        return id == genre.id &&
-                Objects.equals(genreName, genre.genreName) &&
-                Objects.equals(posts, genre.posts);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, genreName, posts);
-    }
-
-    @Override
-    public String toString() {
-        return "Genre{" +
-                "id=" + id +
-                ", genreName='" + genreName + '\'' +
-                ", posts=" + posts +
-                '}';
-    }
 }

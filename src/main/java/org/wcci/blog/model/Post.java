@@ -1,13 +1,6 @@
 package org.wcci.blog.model;
-
-import org.wcci.blog.model.Author;
-import org.wcci.blog.model.Genre;
-import org.wcci.blog.model.Hashtag;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Entity

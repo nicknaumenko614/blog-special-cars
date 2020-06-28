@@ -6,7 +6,6 @@ import org.wcci.blog.model.Author;
 import org.wcci.blog.model.Genre;
 import org.wcci.blog.model.Hashtag;
 import org.wcci.blog.model.Post;
-import org.wcci.blog.repository.AuthorRepository;
 import org.wcci.blog.repository.PostRepository;
 
 import java.time.LocalDateTime;

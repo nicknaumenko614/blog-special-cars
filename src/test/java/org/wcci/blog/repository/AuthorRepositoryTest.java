@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.wcci.blog.model.Author;
-import org.wcci.blog.model.Genre;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -28,9 +27,6 @@ public class AuthorRepositoryTest {
 
         entityManager.flush();
         entityManager.clear();
-
-//        Author retrievedAuthor = authorRepository.findAuthorByAuthorName(testAuthor1.getAuthorName());
-//        assertThat(retrievedAuthor).isEqualTo(testAuthor1);
 
         Author retrievedAuthor = authorRepository.findAuthorByAuthorName("testy1");
         assertThat(retrievedAuthor.getAuthorName()).isEqualTo("testy1");

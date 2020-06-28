@@ -3,13 +3,12 @@ package org.wcci.blog.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.wcci.blog.model.Author;
 import org.wcci.blog.model.Hashtag;
 import org.wcci.blog.service.HashtagsService;
 
 @Controller
 public class HashtagsController {
-   private HashtagsService hashtagsService;
+    private HashtagsService hashtagsService;
 
     public HashtagsController(HashtagsService hashtagsService) {
         this.hashtagsService = hashtagsService;
@@ -27,6 +26,7 @@ public class HashtagsController {
         return "single-hashtag-template";
 
     }
+
     @PostMapping("hashtag/add")
     public String addHashtag(String hashtagName) {
         if (hashtagsService.getHashtagByName(hashtagName) != null) {
