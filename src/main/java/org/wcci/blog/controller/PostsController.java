@@ -52,7 +52,7 @@ public class PostsController {
     }
 
     @PostMapping("posts/add")
-    public String addPost(String title, String body, Long authorId, Long genreId, Long... hashtagIds) {
+    public String addPost(String title, String body, Long authorId, Long genreId, String imageURL, Long... hashtagIds) {
         if (postsService.getPostByTitle(title) != null) {
             return "redirect:/all-posts";
         }
@@ -68,8 +68,15 @@ public class PostsController {
         }
 
 
-        Post postToAdd = new Post(title, body, author, LocalDateTime.now(), genre, hashtags);
+        Post postToAdd = new Post(title, body, author, LocalDateTime.now(), imageURL, genre, hashtags);
         postsService.saveNewPost(postToAdd);
+        return "redirect:/all-posts";
+    }
+
+    @PostMapping("posts/delete")
+    public String deletePost(long postId) {
+        Post postToDelete = postsService.getSinglePost(postId);
+        postsService.deletePost(postId);
         return "redirect:/all-posts";
     }
 }

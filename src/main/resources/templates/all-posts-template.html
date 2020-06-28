@@ -52,6 +52,9 @@
                     <input type="text" name="body" id="new-post__post-body-input">
                 </li>
 
+                <li><label for="new-post__post-image-url-input" class="form__label">Image URL</label>
+                    <input type="text" name="imageURL" id="new-post__post-image-url-input"></li>
+
                 <li><label for="new-post__post-hashtag-input" class="form__label">Hashtag</label>
                     <select name="hashtagIds" multiple id="new-post__post-hashtag-input">
                         <option th:each="hashtag: ${hashtags}" th:value="${hashtag.id}"

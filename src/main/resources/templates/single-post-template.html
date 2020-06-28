@@ -18,6 +18,14 @@
             <h2 th:text="${post.title}" class="post__title">title placeholder</h2>
             <p th:text="${post.author.authorName}" class="post__author">author placeholder</p>
             <p th:text="${post.body}" class="post__body">body placeholder</p>
+
+            <img
+                    th:src="@{${post.imageURL}}"
+                    th:alt="${post.title}"
+                    class="car-image"
+                    alt="car image"
+            />
+
             <p th:text="${post.genre.genreName}" class="post__genre">genre placeholder</p>
             <p th:text="${post.publishDate}" class="post__publish__date">publish date placeholder</p>
 
@@ -28,6 +36,10 @@
                 </li>
             </ul>
         </section>
+        <form action="/posts/delete" method="POST">
+            <input type="hidden" name="postId" th:value="${post.id}">
+            <button type="submit">Delete This Post</button>
+        </form>
 
         <nav class="header__nav">
             <ul class="header__nav-list">

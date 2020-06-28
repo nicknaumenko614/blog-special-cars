@@ -10,10 +10,12 @@ public class Post {
     @GeneratedValue
     private long id;
     private String title;
+    @Column(length = 2000)
     private String body;
     @ManyToOne
     private Author author;
     private LocalDateTime publishDate;
+    private String imageURL;
     @ManyToOne
     private Genre genre;
     @ManyToMany
@@ -22,13 +24,14 @@ public class Post {
     protected Post() {
     }
 
-    public Post(String title, String body, Author author, LocalDateTime publishDate, Genre genre, List<Hashtag> hashtags) {
+    public Post(String title, String body, Author author, LocalDateTime publishDate, String imageURL, Genre genre, List<Hashtag> hashtags) {
         this.title = title;
         this.body = body;
         this.author = author;
         this.publishDate = publishDate;
         this.genre = genre;
         this.hashtags =hashtags;
+        this.imageURL = imageURL;
     }
 
     public long getId() {
@@ -59,5 +62,7 @@ public class Post {
         return hashtags;
     }
 
-
+    public String getImageURL() {
+        return imageURL;
+    }
 }
