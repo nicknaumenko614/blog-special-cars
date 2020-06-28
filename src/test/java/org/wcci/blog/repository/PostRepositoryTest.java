@@ -1,34 +1,51 @@
-package org.wcci.blog;
+package org.wcci.blog.repository;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.wcci.blog.Populator;
 import org.wcci.blog.model.Author;
 import org.wcci.blog.model.Genre;
 import org.wcci.blog.model.Hashtag;
 import org.wcci.blog.model.Post;
-import org.wcci.blog.repository.AuthorRepository;
-import org.wcci.blog.repository.GenreRepository;
-import org.wcci.blog.repository.HashtagRepository;
-import org.wcci.blog.repository.PostRepository;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
-public class Populator implements CommandLineRunner {
-    @Autowired
-    AuthorRepository authorRepo;
-    @Autowired
-    GenreRepository genreRepo;
-    @Autowired
-    HashtagRepository hashtagRepo;
-    @Autowired
-    PostRepository postRepo;
+import static org.assertj.core.api.Assertions.assertThat;
 
-    @Override
-    public void run(String... args) throws Exception {
+@DataJpaTest
+public class PostRepositoryTest {
+
+    @Autowired
+    private GenreRepository genreRepo;
+    @Autowired
+    private AuthorRepository authorRepo;
+    @Autowired
+    private HashtagRepository hashtagRepo;
+    @Autowired
+    private PostRepository postRepository;
+    @Autowired
+    private TestEntityManager entityManager;
+
+
+    @BeforeEach
+    public void setUp() throws Exception {
+        initTestPosts();
+    }
+
+    @Test
+    public void findPostByTitleShouldReturnCorrectPost() {
+        Post retrievedPost = postRepository.findPostByTitle("Second Post Title goes here");
+        assertThat(retrievedPost.getTitle()).isEqualTo("Second Post Title goes here");
+        assertThat(retrievedPost.getAuthor().getAuthorName()).isEqualTo("Vasya P.");
+
+    }
+
+    public void initTestPosts() {
         Genre genre1 = new Genre("New Special Cars (2010 to Current)");
         Genre genre2 = new Genre("Modern Special Cars (1980's to 2000's)");
         Genre genre3 = new Genre("Classic Special Cars(1930's - 1970's)");
@@ -68,9 +85,8 @@ public class Populator implements CommandLineRunner {
                 genre2,
                 hashtagList2);
 
-        postRepo.save(post1);
-        postRepo.save(post2);
-
-
+        postRepository.save(post1);
+        postRepository.save(post2);
     }
 }
+

@@ -65,4 +65,6 @@ public class Post {
     public List<Hashtag> getHashtags() {
         return hashtags;
     }
+
+
 }
