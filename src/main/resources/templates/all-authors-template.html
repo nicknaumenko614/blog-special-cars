@@ -1,47 +1,71 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authors</title>
+    <link rel="stylesheet" href="/css/all-layout.css" />
+    <link rel="stylesheet" href="/css/all-style.css" />
+    <link
+      rel="stylesheet"
+      href="/src/main/resources/static/css/all-layout.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/src/main/resources/static/css/all-style.css"
+    />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/static/css/layout.css">
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
+  <body>
+    <div class="container">
+      <div class="grid">
+        <section class="all__list">
+          <h1 class="title1">Authors</h1>
 
-<body>
-<div class="container">
-    <header class="header">
-        <h1 class="header__title">All Authors</h1>
-
-        <section>
-            <h2>Authors</h2>
-            <ul class="author__list">
-                <li th:each="author: ${authors}" class="author__list-item">
-                    <a th:text="${author.authorName}" th:href="@{'/author/'+${author.id}}"
-                       class="author__link">link to a requested author</a>
-                </li>
-            </ul>
+          <ul>
+            <li th:each="author: ${authors}" class="link">
+              <a
+                th:text="${author.authorName}"
+                th:href="@{'/author/'+${author.id}}"
+                >one link<br />one link<br />one link<br
+              /></a>
+            </li>
+          </ul>
         </section>
-        <section>
-            <h2>Add Author</h2>
-            <form action="authors/add" method="Post" class="new-author-form">
-                <label for="new-author__author-input" class="form_label">New Author</label>
-                <input type="text" name="authorName" id="new-author__author-input">
-                <button type="submit">Submit</button>
-            </form>
-        </section>
 
+        <section class="add__box">
+          <h2 class="title2">Add Author</h2>
+          <form action="authors/add" method="Post" class="box__title">
+            <label for="new-author__author-input"></label>
+            <input
+              type="text"
+              name="authorName"
+              id="new-author__author-input"
+            />
+            <button type="submit">Submit</button>
+          </form>
+        </section>
+      </div>
+
+      <div class="links__container">
         <nav class="header__nav">
-            <ul class="header__nav-list">
-                <li class="header__nav-list-item">
-                    <a href="/" class="header__nav-link">Home</a>
-
-                </li>
-            </ul>
+          <ul class="header__nav-list">
+            <li><a href="/" class="header__nav-link">Home</a></li>
+            <li><a href="/all-authors" class="header__nav-link">Authors</a></li>
+            <li><a href="/all-genres" class="header__nav-link">Genres</a></li>
+            <li>
+              <a href="/all-hashtags" class="header__nav-link">Hashtags</a>
+            </li>
+            <li>
+              <a href="/all-posts" class="header__nav-link">Blog Posts</a>
+            </li>
+          </ul>
         </nav>
-    </header>
-</div>
-</body>
-
-</html>>
+      </div>
+    </div>
+  </body>
+</html>

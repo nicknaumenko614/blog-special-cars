@@ -1,46 +1,65 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Genres</title>
+    <link rel="stylesheet" href="/css/all-layout.css" />
+    <link rel="stylesheet" href="/css/all-style.css" />
+    <link
+      rel="stylesheet"
+      href="/src/main/resources/static/css/all-layout.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/src/main/resources/static/css/all-style.css"
+    />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Genres</title>
-    <link rel="stylesheet" href="/static/css/layout.css">
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
+  <body>
+    <div class="container">
+      <div class="grid">
+        <section class="all__list">
+          <h1 class="title1">Genres</h1>
 
-<body>
-<div class="container">
-    <header class="header">
-        <h1 class="header__title">All Genres</h1>
-
-        <section>
-            <h2>Genres</h2>
-            <ul class="genres__list">
-                <li th:each="genre: ${genres}" class="genres__list-item">
-                    <a th:text="${genre.genreName}" th:href="@{'/genre/'+${genre.id}}"
-                       class="genre__link">link to a requested genre</a>
-                </li>
-            </ul>
+          <ul>
+            <li th:each="genre: ${genres}" class="link">
+              <a th:text="${genre.genreName}" th:href="@{'/genre/'+${genre.id}}"
+                >one genre<br />one genre<br />one genre<br
+              /></a>
+            </li>
+          </ul>
         </section>
-        <section>
-            <h2>Add Genre</h2>
-            <form action="genres/add" method="Post" class="new-genre-form">
-                <label for="new-genre__genre-input" class="form_label">New Genre</label>
-                <input type="text" name="genreName" id="new-genre__genre-input">
-                <button type="submit">Submit</button>
-            </form>
-        </section>
 
+        <section class="add__box">
+          <h2 class="title2">Add a Genre</h2>
+          <form action="genres/add" method="Post" class="box__title">
+            <label for="new-genre__genre-input"></label>
+            <input type="text" name="genreName" id="new-genre__genre-input" />
+            <button type="submit">Submit</button>
+          </form>
+        </section>
+      </div>
+
+      <div class="links__container">
         <nav class="header__nav">
-            <ul class="header__nav-list">
-                <li class="header__nav-list-item">
-                    <a href="/" class="header__nav-link">Home</a>
-                </li>
-            </ul>
+          <ul class="header__nav-list">
+            <li><a href="/" class="header__nav-link">Home</a></li>
+            <li><a href="/all-authors" class="header__nav-link">Authors</a></li>
+            <li><a href="/all-genres" class="header__nav-link">Genres</a></li>
+            <li>
+              <a href="/all-hashtags" class="header__nav-link">Hashtags</a>
+            </li>
+            <li>
+              <a href="/all-posts" class="header__nav-link">Blog Posts</a>
+            </li>
+          </ul>
         </nav>
-    </header>
-</div>
-</body>
-
+      </div>
+    </div>
+  </body>
 </html>

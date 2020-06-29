@@ -1,0 +1,63 @@
+
+    body{
+  
+        background: url(../images/mazdabackground.jpg) no-repeat center center fixed;
+        background-size: cover;
+    
+    }
+    
+    
+    .header__text{
+        height: 70vh;
+        display: grid;
+        grid-template-columns:50%;
+        grid-template-rows: 50% ;
+        
+    }
+    .header__title1{
+        grid-column: 2;
+        text-align: center;
+        
+    }
+    
+    .header__title2{
+        grid-row:2;
+        grid-column:1;
+        text-align: center;
+        
+    }
+    .header__nav-list{
+        
+        
+        display: inline-flex;
+        text-align: center;
+       
+        
+    }
+    
+    .links__container {
+        text-align: center;
+    }
+    
+    .header__nav-link{
+        
+    text-align: auto;
+       
+        padding: 3vh;
+       
+        font-size: 1.8vw;
+    }
+    
+    .header__nav{
+    width: 100%;
+      height: 8.5vh;
+      position: fixed;
+       bottom: 0px;
+      left: 0px;
+      overflow-x: hidden;
+      padding-bottom: 0px;
+    
+    
+    }
+    
+    

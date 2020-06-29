@@ -1,0 +1,72 @@
+body{
+
+    background: url(../images/mazdabackground.jpg) no-repeat center center fixed;
+    background-size: cover;
+
+}
+
+.title1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 4vw ;
+}
+
+.title2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 3vw ;
+}
+
+.link{
+    list-style-type: none;
+
+}
+
+.link a:link{
+    color: black;
+    font-size: 2vw;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.link a:visited{
+    color: rgb(63, 61, 61);
+}
+
+.link a:hover{
+    color: red;
+    font-size: 2.1vw;
+}
+
+
+
+
+
+.header__nav-list{
+
+    list-style-type: none;
+
+    margin-top: 8px;
+    margin-bottom: 0px;
+
+
+}
+
+
+
+.header__nav-link{
+
+    color: white;
+    list-style-type: none;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+.header__nav{
+
+    background-color: rgba(182, 174, 174, 0.699);
+
+
+
+}
