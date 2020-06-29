@@ -1,45 +1,65 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html 
+lang="en" 
+xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Hashtags</title>
-    <link rel="stylesheet" href="/static/css/layout.css">
-    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Hashtags</title>
+    <link rel="stylesheet" href="/css/all-layout.css" />
+    <link rel="stylesheet" href="/css/all-style.css" />
+    <link
+      rel="stylesheet"
+      href="/src/main/resources/static/css/all-layout.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/src/main/resources/static/css/all-style.css"
+    />
 </head>
 
 <body>
 <div class="container">
-    <header class="header">
-        <h1 class="header__title">All Hashtags</h1>
-
-        <section>
-            <h2>Hashtags</h2>
-            <ul class="hashtags__list">
-                <li th:each="hashtag: ${hashtags}" class="hashtags__list-item">
+    <div class="grid">
+        <section class="all__list">
+            <h1 class="title1">Hashtags</h1>
+            
+            <ul>
+             <li th:each="hashtag: ${hashtags}" class="link">
                     <a th:text="${hashtag.tagName}" th:href="@{'/hashtag/'+${hashtag.id}}"
-                       class="hashtag__link">link to all posts with a requested tag name</a>
+                     > posts<br>post<br>post<br>
+                    </a>
                 </li>
             </ul>
         </section>
-        <section>
-            <h2>Add Hashtag</h2>
-            <form action="hashtag/add" method="Post" class="new-hashtag-form">
+
+        <section class="add__box">
+            <h2 class="title2">Add a Hashtag</h2>
+            <form action="hashtag/add" method="Post" class="box__title">
                 <label for="new-hashtag__hashtag-input" class="form_label">New Hashtag</label>
                 <input type="text" name="hashtagName" id="new-hashtag__hashtag-input">
                 <button type="submit">Submit</button>
             </form>
         </section>
-        <nav class="header__nav">
-            <ul class="header__nav-list">
-                <li class="header__nav-list-item">
-                    <a href="/" class="header__nav-link">Home</a>
+    </div>
 
-                </li>
-            </ul>
+    <div class="links__container">
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li><a href="/" class="header__nav-link">Home</a></li>
+            <li><a href="/all-authors" class="header__nav-link">Authors</a></li>
+            <li><a href="/all-genres" class="header__nav-link">Genres</a></li>
+            <li>
+              <a href="/all-hashtags" class="header__nav-link">Hashtags</a>
+            </li>
+            <li>
+              <a href="/all-posts" class="header__nav-link">Blog Posts</a>
+            </li>
+          </ul>
         </nav>
-    </header>
+      </div>
 </div>
 </body>
 
