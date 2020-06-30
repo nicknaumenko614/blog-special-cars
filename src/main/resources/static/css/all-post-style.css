@@ -13,6 +13,7 @@ body{
     color: rgb(224, 219, 219);
     text-transform: uppercase;
     list-style-type: none;
+    overflow: hidden;
 }
 
 .cell1 .posts__list .posts__list-item a {
