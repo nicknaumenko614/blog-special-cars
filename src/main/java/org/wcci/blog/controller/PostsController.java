@@ -79,4 +79,5 @@ public class PostsController {
         postsService.deletePost(postId);
         return "redirect:/all-posts";
     }
+
 }

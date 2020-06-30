@@ -2,19 +2,18 @@ package org.wcci.blog.service;
 
 import org.springframework.stereotype.Service;
 import org.wcci.blog.ResourceNotFoundException;
-import org.wcci.blog.model.Author;
-import org.wcci.blog.model.Genre;
 import org.wcci.blog.model.Hashtag;
 import org.wcci.blog.model.Post;
+import org.wcci.blog.repository.HashtagRepository;
 import org.wcci.blog.repository.PostRepository;
-
-import java.time.LocalDateTime;
 import java.util.*;
 
 @Service
 public class PostsService {
 
     PostRepository postRepo;
+    HashtagRepository hashtagRepo;
+
 
     public PostsService(PostRepository postRepo) {
         this.postRepo = postRepo;
@@ -46,6 +45,8 @@ public class PostsService {
     public void deletePost(long postId) {
         postRepo.deleteById(postId);
     }
+
+
 }
 
 

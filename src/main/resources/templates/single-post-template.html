@@ -1,55 +1,95 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:text="${post.title}">title</title>
+    <link rel="stylesheet" href="/css/single-post-layout.css" />
+    <link rel="stylesheet" href="/css/single-post-style.css" />
+    <link
+      rel="stylesheet"
+      href="/src/main/resources/static/css/single-post-layout.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/src/main/resources/static/css/single-post-style.css"
+    />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title th:text="${post.title}"></title>
-    <link rel="stylesheet" href="/static/css/layout.css">
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
+  <body>
+    <div class="container">
+      <header>
+        <h2 th:text="${post.title}" class="post__title">title placeholder</h2>
+      </header>
 
-<body>
-<div class="container">
-    <header class="header">
-        <h1 class="header__title">Single Post</h1>
+      <section>
+        <img
+          th:src="@{${post.imageURL}}"
+          th:alt="${post.title}"
+          class="car-image"
+          alt="car image"
+          width="600"
+        />
+        <p
+          th:text="'Written by '+${post.author.authorName}"
+          class="post__author"
+        >
+          author placeholder
+        </p>
+        <p th:text="${post.body}" class="post__body">body placeholder</p>
 
-        <section>
-            <h2 th:text="${post.title}" class="post__title">title placeholder</h2>
-            <p th:text="${post.author.authorName}" class="post__author">author placeholder</p>
-            <p th:text="${post.body}" class="post__body">body placeholder</p>
+        <p
+          th:text="'This post fits with the following genre: '+${post.genre.genreName}"
+          class="post__genre"
+        >
+          genre placeholder
+        </p>
+        <p
+          th:text="'Published on: '+${post.publishDate}"
+          class="post__publish__date"
+        >
+          publish date placeholder
+        </p>
 
-            <img
-                    th:src="@{${post.imageURL}}"
-                    th:alt="${post.title}"
-                    class="car-image"
-                    alt="car image"
-            />
+        <ul class="hashtags__list">
+          <li th:each="hashtag: ${post.hashtags}" class="hashtags__item">
+            <a
+              th:text="'#Hashtag : '+${hashtag.tagName}"
+              th:href="@{'/hashtag/'+${hashtag.id}}"
+              class="hashtag__link"
+            >
+              hashtag placeholder</a
+            >
+          </li>
+        </ul>
+      </section>
 
-            <p th:text="${post.genre.genreName}" class="post__genre">genre placeholder</p>
-            <p th:text="${post.publishDate}" class="post__publish__date">publish date placeholder</p>
-
-            <ul class="hashtags__list">
-                <li th:each="hashtag: ${post.hashtags}" class="hashtags__item">
-                    <a th:text="${hashtag.tagName}"
-                       th:href="@{'/hashtag/'+${hashtag.id}}" class="hashtag__link"> hashtag placeholder</a>
-                </li>
-            </ul>
-        </section>
+      <section>
         <form action="/posts/delete" method="POST">
-            <input type="hidden" name="postId" th:value="${post.id}">
-            <button type="submit">Delete This Post</button>
+          <input type="hidden" name="postId" th:value="${post.id}" />
+          <button type="submit">Delete This Post</button>
         </form>
+      </section>
 
+      <div class="links__container">
         <nav class="header__nav">
-            <ul class="header__nav-list">
-                <li class="header__nav-list-item">
-                    <a href="/" class="header__nav-link">Home</a>
-                </li>
-            </ul>
+          <ul class="header__nav-list">
+            <li><a href="/" class="header__nav-link">Home</a></li>
+            <li><a href="/all-authors" class="header__nav-link">Authors</a></li>
+            <li><a href="/all-genres" class="header__nav-link">Genres</a></li>
+            <li>
+              <a href="/all-hashtags" class="header__nav-link">Hashtags</a>
+            </li>
+            <li>
+              <a href="/all-posts" class="header__nav-link">Blog Posts</a>
+            </li>
+          </ul>
         </nav>
-    </header>
-</div>
-</body>
-
+      </div>
+    </div>
+  </body>
 </html>
