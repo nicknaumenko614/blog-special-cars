@@ -41,8 +41,8 @@ public class Populator implements CommandLineRunner {
         authorRepo.save(author1);
         authorRepo.save(author2);
 
-        Hashtag hashtag1 = new Hashtag("Fast Car");
-        Hashtag hashtag2 = new Hashtag("Rare car");
+        Hashtag hashtag1 = new Hashtag("Fast");
+        Hashtag hashtag2 = new Hashtag("Rare");
         Hashtag hashtag3 = new Hashtag("Electric power!");
         hashtagRepo.save(hashtag1);
         hashtagRepo.save(hashtag2);
@@ -50,6 +50,7 @@ public class Populator implements CommandLineRunner {
 
         List<Hashtag> hashtagList1 = new ArrayList<>();
         hashtagList1.add(hashtag2);
+
         Post post1 = new Post("Honda CRX Si",
                 "The Honda CRX Si is a brilliant little car- endowed with not much power and a scant curb weight to match. " +
                         "In 1988, the second-generation CRX Si was introduced in North America. These later cars are the stuff of legend. " +
@@ -64,6 +65,7 @@ public class Populator implements CommandLineRunner {
         List<Hashtag> hashtagList2 = new ArrayList<>();
         hashtagList2.add(hashtag1);
         hashtagList2.add(hashtag3);
+
         Post post2 = new Post("Tesla Model S",
                 "Tesla effectively created the luxury electric segment with the introduction of the first Model S back in 2012. " +
                         "Eight years later, larger, more established automakers are still trying to catch up. " +
@@ -75,8 +77,24 @@ public class Populator implements CommandLineRunner {
                 genre1,
                 hashtagList2);
 
+        Post post3 = new Post("Mercedes Benz 250SL",
+                "This 1967 Mercedes Hardtop Convertible is extremely rare. Most of these were made with a soft top and no back seat. " +
+                        "With only a few hundred 2x2 models made, it is very collectible and will fetch serious money. ",
+                author2,
+                LocalDateTime.now(),
+                "../../images/mercedes.jpg",
+                genre3,
+                hashtagList1);
+
+        List<Hashtag> hashtagList3 = new ArrayList<>();
+        hashtagList3.add(hashtag3);
+
+
+
+
         postRepo.save(post1);
         postRepo.save(post2);
+        postRepo.save(post3);
 
 
     }
