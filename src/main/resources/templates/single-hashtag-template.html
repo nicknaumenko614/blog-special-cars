@@ -1,39 +1,68 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hashtag</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Single Hashtag</title>
-    <link rel="stylesheet" href="/static/css/layout.css">
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
+    <
+    <link rel="stylesheet" href="/css/single-style.css" />
+    <link rel="stylesheet" href="/css/single-layout.css" />
+    <link
+      rel="stylesheet"
+      href="/src/main/resources/static/css/single-layout.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/src/main/resources/static/css/single-style.css"
+    />
+  </head>
 
-<body>
-<div class="container">
-    <header class="header">
-        <h1 class="header__title">Single Hashtag</h1>
-
-        <section>
-            <h2 th:text="${hashtag.tagName}" class="hashtag__name">hashtag name placeholder</h2>
-
-            <ul class="tagged__posts__list">
-                <li th:each="post: ${hashtag.posts}" class="hashtags__item">
-                    <a th:text="${post.title}"
-                       th:href="@{'/post/'+${post.id}}" class="hashtag__link"> tagged post placeholder</a>
-                </li>
-            </ul>
+  <body>
+    <div class="container">
+      <div class="grid">
+        <section class="name">
+          <h2 class="title2">Hashtag:</h2>
+          <h2 th:text="${hashtag.tagName}" class="title2">
+            hashtag name placeholder
+          </h2>
         </section>
 
-        <nav class="header__nav">
-            <ul class="header__nav-list">
-                <li class="header__nav-list-item">
-                    <a href="/" class="header__nav-link">Home</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-</div>
-</body>
+        <section class="list-of-links">
+            <h2 class="title2">Hashtags:</h2>
+          <ul>
+            <li th:each="post: ${hashtag.posts}" class="link">
+              <a
+                th:text="${post.title}"
+                th:href="@{'/post/'+${post.id}}"
+                
+              >
+                tagged post placeholder</a
+              >
+            </li>
+          </ul>
+        </section>
+      </div>
 
+      <div class="links__container">
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li><a href="/" class="header__nav-link">Home</a></li>
+            <li><a href="/all-authors" class="header__nav-link">Authors</a></li>
+            <li><a href="/all-genres" class="header__nav-link">Genres</a></li>
+            <li>
+              <a href="/all-hashtags" class="header__nav-link">Hashtags</a>
+            </li>
+            <li>
+              <a href="/all-posts" class="header__nav-link">Blog Posts</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </body>
 </html>
