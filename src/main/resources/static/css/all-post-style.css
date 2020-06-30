@@ -5,12 +5,35 @@ body{
 
 }
 
+.cell1 .posts__list .posts__list-item{
+    padding: 1rem;
+    display: inline-flex;
+    text-align: center;
+    background-color: black;
+    color: rgb(224, 219, 219);
+    text-transform: uppercase;
+    list-style-type: none;
+}
+
+.cell1 .posts__list .posts__list-item a {
+    color: red;
+    text-decoration: none;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 5vh;
+}
+
+.header__title1 {
+    margin-top: 0rem;
+    text-align: center;
+    font-family: 'Monofett';
+    font-size: 8vw;
+    color: rgb(126, 20, 69);
+}
 
 .header__title2{
     font-family: Georgia, 'Times New Roman', Times, serif;
    font-style: italic;
     text-align: center;
-    font-family: 'Monofett';
     font-size: 5vh;
 
     
