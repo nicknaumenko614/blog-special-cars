@@ -28,8 +28,8 @@ xmlns:th="http://www.thymeleaf.org">
             
             <ul>
              <li th:each="hashtag: ${hashtags}" class="link">
-                    <a th:text="${hashtag.tagName}" th:href="@{'/hashtag/'+${hashtag.id}}"
-                     > posts<br>post<br>post<br>
+                    <a th:text="'#'+${hashtag.tagName}" th:href="@{'/hashtag/'+${hashtag.id}}"
+                     > hashtag<br>hashtag<br>hashtag<br>
                     </a>
                 </li>
             </ul>
@@ -38,7 +38,7 @@ xmlns:th="http://www.thymeleaf.org">
         <section class="add__box">
             <h2 class="title2">Add a Hashtag</h2>
             <form action="hashtag/add" method="Post" class="box__title">
-                <label for="new-hashtag__hashtag-input" class="form_label">New Hashtag</label>
+                <label for="new-hashtag__hashtag-input" class="form_label"></label>
                 <input type="text" name="hashtagName" id="new-hashtag__hashtag-input">
                 <button type="submit">Submit</button>
             </form>

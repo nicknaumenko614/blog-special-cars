@@ -31,14 +31,14 @@
               <a
                 th:text="${author.authorName}"
                 th:href="@{'/author/'+${author.id}}"
-                >one link<br />one link<br />one link<br
+                >author<br />author<br />author<br
               /></a>
             </li>
           </ul>
         </section>
 
         <section class="add__box">
-          <h2 class="title2">Add Author</h2>
+          <h2 class="title2">Add an Author</h2>
           <form action="authors/add" method="Post" class="box__title">
             <label for="new-author__author-input"></label>
             <input

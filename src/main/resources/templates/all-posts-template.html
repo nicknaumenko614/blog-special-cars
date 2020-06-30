@@ -1,84 +1,137 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Posts</title>
-    <link rel="stylesheet" href="/static/css/layout.css">
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
+    <link rel="stylesheet" href="/css/all-post-layout.css" />
+    <link rel="stylesheet" href="/css/all-post-style.css" />
+    <link
+      rel="stylesheet"
+      href="/src/main/resources/static/css/all-post-layout.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/src/main/resources/static/css/all-post-style.css"
+    />
+  </head>
 
-<body>
-<div class="container">
-    <header class="header">
-        <h1 class="header__title">All Posts</h1>
+  <body>
+    <div class="container">
+      <div class="cell2">
+        <h1 class="header__title1">Posts</h1>
+      </div>
 
-        <section>
-            <h2>Posts</h2>
-            <ul class="posts__list">
-                <li th:each="post: ${posts}" class="posts__list-item">
-                    <a th:text="${post.title}" th:href="@{'/post/'+${post.id}}"
-                       class="posts__link">link to a requested post</a>
-                </li>
-            </ul>
-        </section>
+      <div class="cell1">
+        <ul class="posts__list">
+          <li th:each="post: ${posts}" class="posts__list-item">
+            <a
+              th:text="${post.title}"
+              th:href="@{'/post/'+${post.id}}"
+              class="posts__link"
+              >link to a requested post</a
+            >
+          </li>
+        </ul>
+      </div>
 
-        <section>
-            <h2>Add Post</h2>
-
-            <form action="posts/add" method="POST" class="new-post-form">
-
-                <li><label for="new-post__post-genre-input" class="form__label">Genre</label>
-                    <select name="genreId" id="new-post__post-genre-input">
-                        <option th:each="genre:${genres}" th:value="${genre.id}" th:text="${genre.genreName} "></option>
-                    </select>
-                </li>
-
-                <li><label for="new-post__post-author-input" class="form__label">Author</label>
-                    <select name="authorId" id="new-post__post-author-input">
-                        <option th:each="author:${authors}" th:value="${author.id}"
-                                th:text="${author.authorName} "></option>
-                    </select>
-                </li>
-
-                <li><label for="new-post__post-title-input" class="form__label">Title</label>
-                    <input type="text" name="title" id="new-post__post-title-input">
-                </li>
-
-                <li><label for="new-post__post-body-input" class="form__label">Text of your post</label>
-                    <input type="text" name="body" id="new-post__post-body-input">
-                </li>
-
-                <li><label for="new-post__post-image-url-input" class="form__label">Image URL</label>
-                    <input type="text" name="imageURL" id="new-post__post-image-url-input"></li>
-
-                <li><label for="new-post__post-hashtag-input" class="form__label">Hashtag</label>
-                    <select name="hashtagIds" multiple id="new-post__post-hashtag-input">
-                        <option th:each="hashtag: ${hashtags}" th:value="${hashtag.id}"
-                                th:text="${hashtag.tagName}"></option>
-                    </select>
-                </li>
-
-
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-
-        <nav class="header__nav">
-            <ul class="header__nav-list">
-                <li class="header__nav-list-item">
-                    <a href="/" class="header__nav-link">Home</a>
-
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-
+<div class="cell3">
+    <h1 class="header__title2">Add a Post:</h1>
 </div>
-</body>
 
+      <div class="cell4">
+        
+        <!-- <form action="posts/add" method="POST" class="new-post-form">
+            <label for="new-post__post-genre-input" class="form__label"
+              >Genre</label
+            >
+            <select name="genreId" id="new-post__post-genre-input">
+              <option
+                th:each="genre:${genres}"
+                th:value="${genre.id}"
+                th:text="${genre.genreName} "
+              ></option>
+            </select>
+        
+
+          
+            <label for="new-post__post-author-input" class="form__label"
+              >Author</label
+            >
+            <select name="authorId" id="new-post__post-author-input">
+              <option
+                th:each="author:${authors}"
+                th:value="${author.id}"
+                th:text="${author.authorName} "
+              ></option>
+            </select>
+        
+
+          
+            <label for="new-post__post-title-input" class="form__label"
+              >Title</label
+            >
+            <input type="text" name="title" id="new-post__post-title-input" />
+          
+
+          
+            <label for="new-post__post-body-input" class="form__label"
+              >Text of your post</label
+            >
+            <textarea name="body" id="new-post__post-body-input"></textarea>
+          
+
+          
+            <label for="new-post__post-image-url-input" class="form__label"
+              >Image URL</label
+            >
+            <input
+              type="text"
+              name="imageURL"
+              id="new-post__post-image-url-input"
+            />
+          
+
+          
+            <label for="new-post__post-hashtag-input" class="form__label"
+              >Hashtag</label
+            >
+            <select
+              name="hashtagIds"
+              multiple
+              id="new-post__post-hashtag-input"
+            >
+              <option
+                th:each="hashtag: ${hashtags}"
+                th:value="${hashtag.id}"
+                th:text="${hashtag.tagName}"
+              ></option>
+            </select>
+        
+
+          <button type="submit">Submit</button>
+        </form> -->
+      </div>
+    </div>
+
+    <div class="links__container">
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li><a href="/" class="header__nav-link">Home</a></li>
+          <li><a href="/all-authors" class="header__nav-link">Authors</a></li>
+          <li><a href="/all-genres" class="header__nav-link">Genres</a></li>
+          <li>
+            <a href="/all-hashtags" class="header__nav-link">Hashtags</a>
+          </li>
+          <li>
+            <a href="/all-posts" class="header__nav-link">Blog Posts</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </body>
 </html>
