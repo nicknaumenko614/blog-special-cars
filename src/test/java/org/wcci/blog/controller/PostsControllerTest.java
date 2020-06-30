@@ -75,10 +75,14 @@ public class PostsControllerTest {
         List<Hashtag> hashtagList1 = new ArrayList<>();
         hashtagList1.add(hashtag1);
 
-        Post post1 = new Post("TestPost",
-                "This is the body of first post",
+        Post post1 = new Post("Honda CRX Si",
+                "The Honda CRX Si is a brilliant little car- endowed with not much power and a scant curb weight to match. \" +\n" +
+                        "                        \"In 1988, the second-generation CRX Si was introduced in North America. These later cars are the stuff of legend. \" +\n" +
+                        "                        \"They were cheap, light, precise, and about as mechanically complex as a screwdriver. \" +\n" +
+                        "                        \"They also came at a small sticker price, further adding to their desirability.",
                 author1,
                 LocalDateTime.now(),
+                "../../images/CRX1.jpg",
                 genre1,
                 hashtagList1);
         return post1;

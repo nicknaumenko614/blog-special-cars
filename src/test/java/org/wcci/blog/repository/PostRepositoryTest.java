@@ -38,8 +38,8 @@ public class PostRepositoryTest {
 
     @Test
     public void findPostByTitleShouldReturnCorrectPost() {
-        Post retrievedPost = postRepository.findPostByTitle("Second Post Title goes here");
-        assertThat(retrievedPost.getTitle()).isEqualTo("Second Post Title goes here");
+        Post retrievedPost = postRepository.findPostByTitle("Tesla Model S");
+        assertThat(retrievedPost.getTitle()).isEqualTo("Tesla Model S");
         assertThat(retrievedPost.getAuthor().getAuthorName()).isEqualTo("Vasya P.");
 
     }
@@ -67,20 +67,28 @@ public class PostRepositoryTest {
         List<Hashtag> hashtagList1 = new ArrayList<>();
         hashtagList1.add(hashtag1);
         hashtagList1.add(hashtag3);
-        Post post1 = new Post("First Post Title goes here",
-                "This is the body of first post",
+        Post post1 = new Post("Honda CRX Si",
+                "The Honda CRX Si is a brilliant little car- endowed with not much power and a scant curb weight to match. " +
+                        "In 1988, the second-generation CRX Si was introduced in North America. These later cars are the stuff of legend. " +
+                        "They were cheap, light, precise, and about as mechanically complex as a screwdriver. " +
+                        "They also came at a small sticker price, further adding to their desirability.",
                 author1,
                 LocalDateTime.now(),
+                "../../images/CRX1.jpg",
                 genre1,
                 hashtagList1);
 
         List<Hashtag> hashtagList2 = new ArrayList<>();
         hashtagList2.add(hashtag2);
         hashtagList2.add(hashtag3);
-        Post post2 = new Post("Second Post Title goes here",
-                "This is the body of second post",
+        Post post2 = new Post("Tesla Model S",
+                "Tesla effectively created the luxury electric segment with the introduction of the first Model S back in 2012. " +
+                        "Eight years later, larger, more established automakers are still trying to catch up. " +
+                        "It's a car that changed the game and continues to serve as an industry benchmark. " +
+                        "Today, with dual-motor AWD, autopilot, and ability to increase range past the 400-mile mark, the car still outperforms most of the other EV offerings on the market.",
                 author2,
                 LocalDateTime.now(),
+                "../../images/teslaS.jpg",
                 genre2,
                 hashtagList2);
 
