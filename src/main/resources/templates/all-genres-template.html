@@ -10,14 +10,6 @@
     <title>Genres</title>
     <link rel="stylesheet" href="/css/all-layout.css" />
     <link rel="stylesheet" href="/css/all-style.css" />
-    <link
-      rel="stylesheet"
-      href="/src/main/resources/static/css/all-layout.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/src/main/resources/static/css/all-style.css"
-    />
   </head>
 
   <body>
@@ -39,7 +31,12 @@
           <h2 class="title2">Add a Genre</h2>
           <form action="genres/add" method="Post" class="box__title">
             <label for="new-genre__genre-input"></label>
-            <input type="text" name="genreName" id="new-genre__genre-input" />
+            <input
+              type="text"
+              name="genreName"
+              id="new-genre__genre-input"
+              required
+            />
             <button type="submit">Submit</button>
           </form>
         </section>

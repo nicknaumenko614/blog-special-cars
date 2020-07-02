@@ -8,7 +8,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Author</title>
-    
+
     <link rel="stylesheet" href="/css/single-style.css" />
     <link rel="stylesheet" href="/css/single-layout.css" />
     <link
@@ -35,11 +35,7 @@
           <h2 class="title2">Blog Posts:</h2>
           <ul>
             <li th:each="post: ${author.authorsPosts}" class="link">
-              <a
-                th:text="${post.title}"
-                th:href="@{'/post/'+${post.id}}"
-                
-              >
+              <a th:text="${post.title}" th:href="@{'/post/'+${post.id}}">
                 authors posts placeholder</a
               >
             </li>

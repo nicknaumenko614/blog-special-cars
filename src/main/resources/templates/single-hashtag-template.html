@@ -33,14 +33,10 @@
         </section>
 
         <section class="list-of-links">
-            <h2 class="title2">Hashtags:</h2>
+          <h2 class="title2">Hashtags:</h2>
           <ul>
             <li th:each="post: ${hashtag.posts}" class="link">
-              <a
-                th:text="${post.title}"
-                th:href="@{'/post/'+${post.id}}"
-                
-              >
+              <a th:text="${post.title}" th:href="@{'/post/'+${post.id}}">
                 tagged post placeholder</a
               >
             </li>

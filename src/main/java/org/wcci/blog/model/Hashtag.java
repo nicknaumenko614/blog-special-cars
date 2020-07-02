@@ -19,11 +19,7 @@ public class Hashtag {
     protected Hashtag(){}
 
     public Hashtag(String tagName) {
-        if (tagName.charAt(0) != '#') {
-            this.tagName = tagName;
-        } else {
-            this.tagName = tagName.substring(1, tagName.length());
-        }
+        this.tagName = tagName;
     }
 
     public long getId() {
