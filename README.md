@@ -1,22 +1,23 @@
-# Blog Site
 
-## Module 3 Mastery Project
 
-### Goals
-Build a dynamic web application with a MVC architecture. 
-- Use TDD to create a suite of unit tests and integration tests.
-- Keep your code clean.
-  - Follow We Can Code IT's Java Style guide when writing your code.
-  - Use proper naming conventions.
-  - Make clear and concise names for methods and variables.
-  - Use OOP practices when you can.
-- Make effective use of git and GitHub.
-  - Make frequent commits.
-  - Utilize feature branching.
-- Working Software based on the Module 3 Mastery guideline at [Module 3 Mastery](https://wecancodeit-materials.netlify.com/exercises/mastery/blog-ssr/) 
-  - We are looking for an web application that utilizes a MVC architecture using spring boot.  
-  - We need to see dynamic content being rendered and the ability to add content to the application through an HTML form.
-  - Upon submission we should have an application that starts and passes all tests in the test folder.
-  - Prepare a custom README.md file.  Smart Columbus Open Data Enthusiasts provide a good resource for what an README.md could look like [here.](https://github.com/SCODEMeetup/scode-repo-template/blob/master/README.md)
- ### Resources
- In addition to [We Can Code IT materials](https://wecancodeit-materials.netlify.com/cohorts/java/module-three/), we've included a [HELP.md](./HELP.md) file that is provided by Spring Initializr to help with Spring documentation.
+ This project is a Blogs proof-of-concept for a new blogging platform, Special Cars, Inc.
+ It's designed to give users the ability do discuss vehicles that they find to be different and special.
+ 
+ This proof-of-concept highlits the UX and UI of the design.
+ 
+ The Blogs app consists of 5 basic navigation pages: Home, Authors, Genres, Hashtags, and actual Posts.
+ The Home page is just a landing page that greets the user and offers a navigation bar that will lead user to other pages.
+ Authors, Genres and Hashtags pages allow user to see all Authors, Genres and Hashtags for all blog posts currently present. 
+ Each page also contains a function to add new Authors, Genres and Blogs marked by a given Hashtag, respective to the page's name.
+ The All Posts page is themed differently to distinguish it from other pages, since ALL of the blog posts are displayed there. 
+ It also offers the ability for a user to add their own blog posts. All blog fields are made to be required to make sure all blogs are complete.
+ Each individual blog post has a function to remove it from the app. 
+ 
+ Any given hashtag can be attributed to any number of posts, and any post can have any number of hashtags. 
+ A post can have only one author and genre, but any author can have multiple posts, and any genre can be assigned to multiple posts.
+ 
+ I hope this proof is exactly what your client is looking for. 
+ Any feedback and constructive criticism is welcome and requested.
+ Thank you.
+
+ 
